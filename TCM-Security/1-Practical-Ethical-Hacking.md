@@ -132,3 +132,7 @@ sumrecon: https://github.com/thatonetester/sumrecon
  
  ### Setting up Your AD Lab Using Azure
  Building Free AD lab: https://medium.com/@kamran.bilgrami/ethical-hacking-lessons-building-free-active-directory-lab-in-azure-6c67a7eddd7f
+
+
+### Some Free Book Resources Online
+- [RootUserCop/Free-DevOps-Books](https://github.com/rootusercop/Free-DevOps-Books-1)
