@@ -88,7 +88,7 @@
 
 ## Learning Resources
     |--- Books.md 
-    Blogs.md 
-    Courses.md
+    |--- Blogs.md 
+    |--- Courses.md
     |--- Conferences.md
     |--- CTF_Platforms.md
