@@ -11,7 +11,8 @@ subfinder -dL domains.txt -all -recursive -o subdomains.txt
 cat subdomains.txt | wc -l
 
 # 3. Fetch Subdomains from Certificate Transparency Logs
-curl -s https://crt.sh/?q=amazon.com&output=json | jq -r '.[].name_value' | grep -Po '(\w+\.\w+\.\w+)$' | anew subdomains.txt
+curl -s 'https://crt.sh/?q=%25.target.com&output=json' | jq -r '.[].name_value' | sort -u  | anew subdomains.txt # Collect all levels of domains
+curl -s 'https://crt.sh/?q=%25.target.com&output=json' | jq -r '.[].name_value' | grep -Po '(\w+\.\w+\.\w+)$' | anew subdomains.txt # Collect only of subdomains
 
 # 4. Check Which Subdomains Are Alive with `httpx-toolkit`
 cat subdomains.txt | httpx-toolkit -l subdomains.txt -ports 443,80,8080,8000,8888 -threads 200 > subdomains_alive.txt
